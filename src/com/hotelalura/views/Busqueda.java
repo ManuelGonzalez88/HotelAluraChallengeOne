@@ -274,6 +274,11 @@ public class Busqueda extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
+				int confirmar = JOptionPane.showConfirmDialog(null, "¿Desea Eliminar los datos?"); 
+
+				if(confirmar == JOptionPane.YES_OPTION){
+					editar();
+				}
 
 
 			}
@@ -461,5 +466,12 @@ public class Busqueda extends JFrame {
         return tabla.getSelectedRowCount() != 0 || tabla.getSelectedColumnCount() != 0;
     }
 	
+	/**
+	 * 
+	 */
+	private void editar() {
+		
+		
+	}
 	
 }
