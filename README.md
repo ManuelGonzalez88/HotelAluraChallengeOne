@@ -5,9 +5,6 @@
 </p>
 
 ---
-##  Primeros Pasos:
-</br>
-
 ## 🖥️ Tecnologías Utilizadas:
 
 - Java
