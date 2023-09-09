@@ -29,7 +29,9 @@ import javax.swing.ListSelectionModel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -47,8 +49,6 @@ public class Busqueda extends JFrame {
 	int xMouse, yMouse;
 	private ReservaController reservaController;
 	private HuespedController huespedController;
-//	List<Reserva> reservas;
-//	List<Huesped> huespedes;
 
 	/**
 	 * Launch the application.
@@ -73,10 +73,6 @@ public class Busqueda extends JFrame {
 		
 		reservaController = new ReservaController();
 		huespedController = new HuespedController();
-		
-
-//		reservas = this.reservaController.cargarReservas();
-//		huespedes = this.huespedController.cargarHuespedes();
 		
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Busqueda.class.getResource("/imagenes/lupa2.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -274,12 +270,11 @@ public class Busqueda extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
-				int confirmar = JOptionPane.showConfirmDialog(null, "¿Desea Eliminar los datos?"); 
+				int confirmar = JOptionPane.showConfirmDialog(null, "¿Desea modificar los datos?"); 
 
 				if(confirmar == JOptionPane.YES_OPTION){
-					editar();
+					editar(scroll_table);
 				}
-
 
 			}
 		});
@@ -300,7 +295,7 @@ public class Busqueda extends JFrame {
 		btnEliminar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				int confirmar = JOptionPane.showConfirmDialog(null, "¿Desea Eliminar los datos?"); 
+				int confirmar = JOptionPane.showConfirmDialog(null, "¿Desea eliminar los datos?"); 
 
 				if(confirmar == JOptionPane.YES_OPTION){
 					eliminar(scroll_table);
@@ -407,6 +402,7 @@ public class Busqueda extends JFrame {
 	 */
 	private void eliminar(JScrollPane scroll_table) {
 		if(scroll_table.isVisible()) {
+			
 			if(!tieneFilaElegida(tbReservas)) {
 				JOptionPane.showMessageDialog(this, "Por favor, elije un item");
 	            return;
@@ -469,8 +465,85 @@ public class Busqueda extends JFrame {
 	/**
 	 * 
 	 */
-	private void editar() {
+	private void editar(JScrollPane scroll_table) {
 		
+		if(scroll_table.isVisible()) {
+			
+			Integer id = null;
+			
+			try {
+			id = Integer.valueOf(modelo.getValueAt(
+						tbReservas.getSelectedRow(),0).toString());
+			}catch (Exception e) {
+				JOptionPane.showMessageDialog(this, "Por favor, elije un item");
+			}
+				
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+			Date fechaEntrada = null;
+			Date fechaSalida = null;
+			try {
+				fechaEntrada = dateFormat.parse(
+						modelo.getValueAt(tbReservas.getSelectedRow(),1).toString());
+				fechaSalida = dateFormat.parse(
+						modelo.getValueAt(tbReservas.getSelectedRow(),2).toString());
+			} catch (ParseException e) {
+				System.out.println("error en convertir fecha");
+				e.printStackTrace();
+			}
+			
+			String valor = modelo.getValueAt(
+					tbReservas.getSelectedRow(),3).toString();
+			
+			String formaPago = modelo.getValueAt(
+					tbReservas.getSelectedRow(),4).toString();
+			
+			Reserva reserva = new Reserva(id, fechaEntrada, fechaSalida, valor, formaPago);
+			
+			reservaController.editar(reserva);
+			
+			JOptionPane.showMessageDialog(this, String.format("Se modifico con exito!"));
+			
+		} else {
+			
+			if(!tieneFilaElegida(tbHuespedes)) {
+				JOptionPane.showMessageDialog(this, "Por favor, elije un item");
+	            return;
+			}
+			
+			Integer id = Integer.valueOf(modeloHuesped.getValueAt(
+					tbHuespedes.getSelectedRow(), 0).toString());
+			
+			String nombre = modeloHuesped.getValueAt(tbHuespedes.getSelectedRow(), 1).toString();
+			
+			String apellido = modeloHuesped.getValueAt(tbHuespedes.getSelectedRow(), 2).toString();
+			
+			Date fecha_de_nacimiento = null;
+			
+			try {
+				fecha_de_nacimiento = new SimpleDateFormat("yyyy-MM-dd").parse(
+						modeloHuesped.getValueAt(tbHuespedes.getSelectedRow(), 3).toString());
+			} catch (ParseException e) {
+				System.out.println("error en convertir fecha");
+				e.printStackTrace();
+			}
+			
+			String nacionalidad = modeloHuesped.getValueAt(tbHuespedes.getSelectedRow(), 4).toString();
+			
+			String telefono = modeloHuesped.getValueAt(tbHuespedes.getSelectedRow(), 5).toString();
+			
+			Huesped huesped = new Huesped(id, nombre, apellido, fecha_de_nacimiento, nacionalidad, telefono);
+			
+			huespedController.editar(huesped);
+
+			
+			JOptionPane.showMessageDialog(this, String.format("Se modifico con exito!"));
+			
+		}
+		
+		limpiarTabla(modelo);
+		limpiarTabla(modeloHuesped);
+		cargarReservas(reservaController.cargarReservas());
+		cargarHuespedes(huespedController.cargarHuespedes());
 		
 	}
 	

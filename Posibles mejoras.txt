@@ -1,0 +1,5 @@
+Implementar un menú bar.
+Registrar tipo de habitacion.
+Verificar entrada de datos correcta.
+Si se modifica la fecha de reserva, recalcular costo.
+Añadir mas huespedes para la misma reserva.

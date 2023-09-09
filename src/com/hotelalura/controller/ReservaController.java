@@ -30,4 +30,8 @@ public class ReservaController {
 		return reservaDao.eliminar(id);
 	}
 
+	public void editar(Reserva reserva) {
+		reservaDao.editar(reserva);
+	}
+
 }

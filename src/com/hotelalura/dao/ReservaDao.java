@@ -135,4 +135,35 @@ public class ReservaDao {
 		}
 	}
 
+	public void editar(Reserva reserva) {
+		
+		try {
+			final PreparedStatement statement = con.prepareStatement(
+					"UPDATE reservas SET fechaEntrada = ?, fechaSalida = ?, valor = ?,"
+					+ " formaPago = ? WHERE id = ?");
+			
+			try(statement) {
+				
+				java.util.Date utilDate = reserva.getFechaEntrada();
+				java.sql.Date entrada = new java.sql.Date(utilDate.getTime());
+				
+				java.util.Date utilDate2 = reserva.getFechaSalida();
+				java.sql.Date salida = new java.sql.Date(utilDate2.getTime());
+				
+				statement.setDate(1, entrada);
+				statement.setDate(2, salida);
+				statement.setString(3, reserva.getValor());
+				statement.setString(4, reserva.getFormaPago());
+				statement.setInt(5, reserva.getId());
+				
+				statement.execute();
+				
+			}
+			
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+		
+	}
+
 }
