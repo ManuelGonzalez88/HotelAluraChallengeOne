@@ -32,7 +32,8 @@
 ---
 ##Muestra del proyecto
 ---
-imagen 1
+
+![image](https://github.com/ManuelGonzalez88/HotelAluraChallengeOne/assets/102199116/f1a37e4d-b01b-4e08-828f-55c1eff0a6e1)
 
 El menú principal de nuestra aplicación es nuestra presentación, podemos ver que contiene diferentes elementos:
 
@@ -46,7 +47,8 @@ El menú principal de nuestra aplicación es nuestra presentación, podemos ver 
 
 ---
 
-Imagen 2
+![image](https://github.com/ManuelGonzalez88/HotelAluraChallengeOne/assets/102199116/25886b97-e180-4527-b6b1-2f78eee17d80)
+
 
 Esta ventana debe permitir al usuario ingresar su usuario y contraseña.
 Por detrás de la cortina debemos verificar si los datos ingresados son correctos o incorrectos y notificar al usuario de este estatus, por ejemplo si los datos son incorrectos debe ser mostrado una mensaje al usuario diciendo "Usuario y Contraseña inválidos"
@@ -55,7 +57,8 @@ Para realizar esta tarea puedes crear usuarios predeterminados a través del có
 
 ---
 
-imagen 3
+![image](https://github.com/ManuelGonzalez88/HotelAluraChallengeOne/assets/102199116/9d476f42-e746-4082-98ca-3b3e01d147db)
+
 
 En esta ventana se presentarán las opciones cuando el usuario autenticado está dentro del sistema, tienes las siguientes opciones:
 
@@ -67,7 +70,8 @@ En esta ventana se presentarán las opciones cuando el usuario autenticado está
 
 ---
 
-imagen 4
+![image](https://github.com/ManuelGonzalez88/HotelAluraChallengeOne/assets/102199116/fb20c9fd-d977-4082-8bbb-0112478d07e0)
+
 
 La ventana de Reservas debe permitir al usuario registrar los siguientes datos:
 
@@ -79,19 +83,20 @@ La ventana de Reservas debe permitir al usuario registrar los siguientes datos:
 
 -Forma de Pago donde el usuario podrá elegir entre:
 
-     -Tarjeta de crédito
+   -Tarjeta de crédito
 
-     -Tarjeta de débito
+   -Tarjeta de débito
 
-     -Dinero en efectivo
+   -Dinero en efectivo
 
--Botón continuar
+   -Botón continuar
 
 Es importante que al momento de guardar nuestros datos sea generado un número de reserva que será utilizado en la sección de registro de huéspedes de forma automática ya que será un campo que el usuario no podrá manipular.
 
 ---
 
-imagen 5
+![image](https://github.com/ManuelGonzalez88/HotelAluraChallengeOne/assets/102199116/3b679675-d77a-4c3f-b8ff-614bcc9c90a4)
+
 
 Esta sección tendrá los datos personales de los huéspedes con los siguientes campos:
 
@@ -109,7 +114,7 @@ Esta sección tendrá los datos personales de los huéspedes con los siguientes 
 
 ---
 
-imagen 6
+![image](https://github.com/ManuelGonzalez88/HotelAluraChallengeOne/assets/102199116/80c7212f-453c-4bdf-9ae3-c3a8f610c674)
 
 Esta sección debe permitir al usuario buscar las informaciones que están dentro de nuestra base de datos.
 
@@ -123,13 +128,13 @@ Estos datos serán presentado a través de dos tablas, al seleccionar cualquier 
 
 ---
 
-imagen 7
+![image](https://github.com/ManuelGonzalez88/HotelAluraChallengeOne/assets/102199116/6b70b145-6cc9-4245-9ce4-1b8966c36869)
 
 Si el usuario necesita eliminar algún registro, al hacer click en el registro que se desea eliminar y en el icono de eliminar debe conseguir eliminar los datos y una vez hecha la eliminación el usuario deberá ser notificado de que los cambios fueron hechos o si hubo algún error, además de actualizar los datos de la tabla y mostrarlo en pantalla
 
 ---
 
-imagen 8
+![image](https://github.com/ManuelGonzalez88/HotelAluraChallengeOne/assets/102199116/706a2471-61ec-45a3-bbee-9a18a24c2349)
 
 Si el usuario necesita hacer la edición de alguna información, al hacer click en el registro que se desea modificar y en el icono de editar debe conseguir editar los datos y una vez hecha la modificación el usuario deberá ser notificado de que los cambios fueron guardados o si hubo algún error.
 
