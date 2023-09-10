@@ -36,13 +36,13 @@ imagen 1
 
 El menú principal de nuestra aplicación es nuestra presentación, podemos ver que contiene diferentes elementos:
 
-Imagen de wallpaper
+-Imagen de wallpaper
 
-Logo del Hotel
+-Logo del Hotel
 
-Botón Login que al ser clickado debe llevar a la ventana de iniciar sesión
+-Botón Login que al ser clickado debe llevar a la ventana de iniciar sesión
 
-Botón salir que debe preguntar al usuario si realmente desea salir de la aplicación.
+-Botón salir que debe preguntar al usuario si realmente desea salir de la aplicación.
 
 ---
 
@@ -59,11 +59,11 @@ imagen 3
 
 En esta ventana se presentarán las opciones cuando el usuario autenticado está dentro del sistema, tienes las siguientes opciones:
 
-Reservar: lleva a la ventana de Reservas.
+-Reservar: lleva a la ventana de Reservas.
 
-Búsqueda: lleva a la ventana de Sistema de búsqueda.
+-Búsqueda: lleva a la ventana de Sistema de búsqueda.
 
-Salir del Sistema: lleva a la ventana de Login.
+-Salir del Sistema: lleva a la ventana de Login.
 
 ---
 
@@ -71,20 +71,66 @@ imagen 4
 
 La ventana de Reservas debe permitir al usuario registrar los siguientes datos:
 
-Día de Entrada
+-Día de Entrada
 
-Día de Salida
+-Día de Salida
 
-Valor de la reserva, que será calculado en base a un valor de diaria fijo que tú mismo podrás elegir.
+-Valor de la reserva, que será calculado en base a un valor de diaria fijo que tú mismo podrás elegir.
 
-Forma de Pago donde el usuario podrá elegir entre:
+-Forma de Pago donde el usuario podrá elegir entre:
 
-Tarjeta de crédito
+     -Tarjeta de crédito
 
-Tarjeta de débito
+     -Tarjeta de débito
 
-Dinero en efectivo
+     -Dinero en efectivo
 
-Botón continuar
+-Botón continuar
 
 Es importante que al momento de guardar nuestros datos sea generado un número de reserva que será utilizado en la sección de registro de huéspedes de forma automática ya que será un campo que el usuario no podrá manipular.
+
+---
+
+imagen 5
+
+Esta sección tendrá los datos personales de los huéspedes con los siguientes campos:
+
+-Nombre
+
+-Apellido
+
+-Fecha de Nacimiento
+
+-Nacionalidad
+
+-Teléfono
+
+-Número de reserva que fue generada anteriormente.
+
+---
+
+imagen 6
+
+Esta sección debe permitir al usuario buscar las informaciones que están dentro de nuestra base de datos.
+
+Existen dos criterio de búsqueda:
+
+-Apellido
+
+-Número de Reserva
+
+Estos datos serán presentado a través de dos tablas, al seleccionar cualquier registro el usuario podrá, editar o eliminar dicho registro.
+
+---
+
+imagen 7
+
+Si el usuario necesita eliminar algún registro, al hacer click en el registro que se desea eliminar y en el icono de eliminar debe conseguir eliminar los datos y una vez hecha la eliminación el usuario deberá ser notificado de que los cambios fueron hechos o si hubo algún error, además de actualizar los datos de la tabla y mostrarlo en pantalla
+
+---
+
+imagen 8
+
+Si el usuario necesita hacer la edición de alguna información, al hacer click en el registro que se desea modificar y en el icono de editar debe conseguir editar los datos y una vez hecha la modificación el usuario deberá ser notificado de que los cambios fueron guardados o si hubo algún error.
+
+---
