@@ -33,7 +33,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 @SuppressWarnings("serial")
 public class Busqueda extends JFrame {
@@ -407,44 +406,31 @@ public class Busqueda extends JFrame {
 				JOptionPane.showMessageDialog(this, "Por favor, elije un item");
 	            return;
 			}
-			
-			Optional.ofNullable(modelo.getValueAt(tbReservas.getSelectedRow(),
-											tbReservas.getSelectedColumn()))
-				.ifPresentOrElse(fila -> {
-                    Integer id = Integer.valueOf(modelo.getValueAt(
-                    		tbReservas.getSelectedRow(),0).toString());
-                    int filasModificadas;
-                    
-                    filasModificadas = this.reservaController.eliminar(id);
-                   
-                    modelo.removeRow(tbReservas.getSelectedRow());
+            Integer id = Integer.valueOf(modelo.getValueAt(
+            		tbReservas.getSelectedRow(),0).toString());
+            int filasModificadas;
+            
+            filasModificadas = this.reservaController.eliminar(id);
 
-                    JOptionPane.showMessageDialog(this, String.format("%d item eliminado con éxito!", filasModificadas));
-                }, () -> JOptionPane.showMessageDialog(this, "Por favor, elije un item"));
+            JOptionPane.showMessageDialog(this, String.format("%d item eliminado con éxito!", filasModificadas));
+                
 			
 			
-		}else {
+		} else {
 			
 			if(!tieneFilaElegida(tbHuespedes)) {
 				JOptionPane.showMessageDialog(this, "Por favor, elije un item");
 	            return;
 			}
-			
-			Optional.ofNullable(modeloHuesped.getValueAt(tbHuespedes.getSelectedRow(),
-										tbHuespedes.getSelectedColumn()))
-				.ifPresentOrElse(fila -> {
-                    Integer huesped = Integer.parseInt(modeloHuesped.getValueAt(
-                    		tbHuespedes.getSelectedRow(),6).toString());
-                    
-                    System.out.println(huesped);
-                    
-                    reservaController.eliminar(huesped);
-                   
-                    modeloHuesped.removeRow(tbHuespedes.getSelectedRow());
-                    modelo.removeRow(tbReservas.getSelectedRow());
+	
+            Integer huesped = Integer.parseInt(modeloHuesped.getValueAt(
+            		tbHuespedes.getSelectedRow(),6).toString());
+            
+            System.out.println(huesped);
+            
+            reservaController.eliminar(huesped);
 
-                    JOptionPane.showMessageDialog(this, String.format("Item eliminado con éxito!"));
-                }, () -> JOptionPane.showMessageDialog(this, "Por favor, elije un item"));
+            JOptionPane.showMessageDialog(this, String.format("Item eliminado con éxito!"));
 			
 		}
 		
