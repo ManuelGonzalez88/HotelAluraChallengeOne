@@ -11,6 +11,7 @@
 - Eclipse
 - Biblioteca JCalendar
 - MySql
+- JDBC, clase Controller, clase DAO
 - Plugin WindowBuilder </br>
 
 ---
