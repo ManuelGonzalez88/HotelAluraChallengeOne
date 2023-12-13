@@ -140,3 +140,6 @@ Si el usuario necesita eliminar algún registro, al hacer click en el registro q
 Si el usuario necesita hacer la edición de alguna información, al hacer click en el registro que se desea modificar y en el icono de editar debe conseguir editar los datos y una vez hecha la modificación el usuario deberá ser notificado de que los cambios fueron guardados o si hubo algún error.
 
 ---
+
+# Autor
+[![GitHub](https://img.shields.io/badge/ManuelGonzalez88-black?logo=github&logoColor=FFFFFF&style=for-the-badge)](https://github.com/ManuelGonzalez88)
