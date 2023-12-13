@@ -31,7 +31,7 @@
 6_ Base de datos para almacenar todos los datos pedidos anteriormente.
 
 ---
-##Muestra del proyecto
+Muestra del proyecto
 ---
 
 ![image](https://github.com/ManuelGonzalez88/HotelAluraChallengeOne/assets/102199116/f1a37e4d-b01b-4e08-828f-55c1eff0a6e1)
